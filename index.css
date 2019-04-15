@@ -1,3 +1,21 @@
 .label {
   color: white;
 }
+
+@keyframes home-div {
+  to {
+    transform: translateX(-1260px);
+  }
+}
+
+section.hero {
+  animation-name: home-div;
+  animation-duration: 2s;
+  animation-play-state: paused;
+}
+
+section.running {
+    /* -webkit-animation-play-state: running; */
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+}

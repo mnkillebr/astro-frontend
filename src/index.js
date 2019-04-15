@@ -1,4 +1,6 @@
 function homeDiv() {return document.querySelector('div.columns')}
+function resetBtn() {return document.querySelector('button.reset')}
+const homeSection = document.querySelector('section.hero')
 
 document.addEventListener('DOMContentLoaded', event=>{
   fetch('http://localhost:3000/signs/')
@@ -15,8 +17,12 @@ homeDiv().addEventListener('click', event=>{
     console.log('You clicked the Submit')
     let userName = event.target.parentElement.parentElement.querySelector('#name').value
     let dateBirth = event.target.parentElement.parentElement.querySelector('#dob').value
-    // debugger
+    homeSection.classList.toggle('running')
   } else {
     console.log('Almost')
   }
+})
+
+resetBtn().addEventListener('click', event=>{
+  location.reload()
 })
