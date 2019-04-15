@@ -2,9 +2,46 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ASTRO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script defer src="src/index.js" charset="utf-8"></script>
   </head>
   <body>
-
+    <section class="section is-fullwidth">
+      <section class="hero is-medium is-primary is-bold">
+        <div class="hero-body">
+          <div class="columns">
+            <div class="column">
+              <h1 class="title">
+                WELCOME TO ASTRO!
+              </h1>
+              <h2 class="subtitle">
+                Learn more about yourself
+              </h2>
+            </div>
+            <div class="column">
+              <div class="field">
+                <label class="label">Name</label>
+                <div class="control">
+                  <input id="name" class="input" type="text" placeholder="e.g Sadie Bennett">
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Date of Birth</label>
+                <div class="control">
+                  <input id="dob" class="input" type="date">
+                </div>
+              </div>
+              <div class="control">
+                <button class="button is-primary">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
   </body>
 </html>
