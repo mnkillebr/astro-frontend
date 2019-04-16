@@ -1,6 +1,7 @@
 function homeDiv() {return document.querySelector('div.columns')}
 function resetBtn() {return document.querySelector('button.reset')}
 const homeSection = document.querySelector('section.hero')
+const htmlTag = document.querySelector('html')
 
 document.addEventListener('DOMContentLoaded', event=>{
   fetch('http://localhost:3000/signs/')
@@ -12,17 +13,21 @@ document.addEventListener('DOMContentLoaded', event=>{
   })
 })
 
+//home form
 homeDiv().addEventListener('click', event=>{
   if (event.target.tagName === "BUTTON") {
-    console.log('You clicked the Submit')
-    let userName = event.target.parentElement.parentElement.querySelector('#name').value
-    let dateBirth = event.target.parentElement.parentElement.querySelector('#dob').value
-    homeSection.classList.toggle('running')
-  } else {
-    console.log('Almost')
+    let userName = event.target.parentElement.parentElement.querySelector('#name').value;
+    let dateBirth = event.target.parentElement.parentElement.querySelector('#dob').value;
+    if (userName == "" || dateBirth == "") {
+      alert('Are you a ghost, child?')
+    } else {
+      homeSection.classList.toggle('running');
+      htmlTag.style.backgroundImage = "url('https://files.slack.com/files-pri/T02MD9XTF-FHWM0P4Q5/otheroption.jpg')";
+    }
   }
 })
 
+//page refresh
 resetBtn().addEventListener('click', event=>{
   location.reload()
 })
