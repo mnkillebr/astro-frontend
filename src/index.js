@@ -24,8 +24,7 @@ homeDiv().addEventListener('click', event=>{
       htmlTag.style.backgroundImage = "url('https://files.slack.com/files-pri/T02MD9XTF-FHWM0P4Q5/otheroption.jpg')";
       let birthMonth = parseInt(dateBirth.split("-")[1]);
       let birthDay = parseInt(dateBirth.split("-")[2]);
-      Sign.getSign(birthDay, birthMonth)
-
+      const userSign = Sign.all.filter((element)=>{return element.name==Sign.getSign(birthDay, birthMonth)})[0]
       debugger
     }
   }
