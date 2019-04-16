@@ -8,14 +8,28 @@
   }
 }
 
+h1.title, h2.subtitle, label.label {
+  color: white;
+}
+
+button.button {
+  color: #154796
+}
+
 section.hero {
   animation-name: home-div;
   animation-duration: 2s;
   animation-play-state: paused;
+  background: rgba(21,71,150,0.5)
 }
 
 section.running {
     /* -webkit-animation-play-state: running; */
     animation-play-state: running;
     animation-fill-mode: forwards;
+}
+
+html {
+  background: url(assets/sky.gif) no-repeat center center fixed;
+  background-size: cover;
 }
