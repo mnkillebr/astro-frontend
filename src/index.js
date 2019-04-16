@@ -4,11 +4,10 @@ const homeSection = document.querySelector('section.hero')
 const htmlTag = document.querySelector('html')
 
 document.addEventListener('DOMContentLoaded', event=>{
-  fetch('http://localhost:3000/signs/')
-  .then(response=>{return response.json()})
+  Sign.getAll()
   .then(signsArr=>{
     signsArr.forEach(sign=>{
-      console.log(sign)
+      const newSign = new Sign(sign)
     })
   })
 })
@@ -23,6 +22,11 @@ homeDiv().addEventListener('click', event=>{
     } else {
       homeSection.classList.toggle('running');
       htmlTag.style.backgroundImage = "url('https://files.slack.com/files-pri/T02MD9XTF-FHWM0P4Q5/otheroption.jpg')";
+      let birthMonth = parseInt(dateBirth.split("-")[1]);
+      let birthDay = parseInt(dateBirth.split("-")[2]);
+      Sign.getSign(birthDay, birthMonth)
+
+      debugger
     }
   }
 })
