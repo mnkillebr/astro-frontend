@@ -4,7 +4,7 @@
 
 @keyframes home-div {
   to {
-    transform: translateX(-1260px);
+    transform: translateX(-1500px);
   }
 }
 
@@ -76,6 +76,15 @@ button.button {
   color: #154796
 }
 
+canvas#play {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
 canvas#background{
   display: none;
 }
@@ -109,7 +118,14 @@ section.running {
     animation-fill-mode: forwards;
 }
 
+html.new {
+  background: url(assets/otheroption.jpg) no-repeat center center fixed;
+  background-size: cover;
+  z-index: -1;
+}
+
 html {
   background: url(assets/sky3.gif) no-repeat center center fixed;
   background-size: cover;
+  z-index: -1;
 }

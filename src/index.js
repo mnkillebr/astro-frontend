@@ -3,7 +3,18 @@ function resetBtn() {return document.querySelector('button.reset')}
 const homeSection = document.querySelector('section.hero')
 const htmlTag = document.querySelector('html')
 const htmlBody = document.querySelector('body')
+function gameDiv() {return document.querySelector('.tile.is-ancestor')}
 let matches = []
+
+function gameBtnClick() {
+  gameDiv().addEventListener('click', event=>{
+    if (event.target.tagName === 'BUTTON') {
+      document.querySelector('canvas#background').id = 'play'
+      event.target.remove()
+
+    }
+  })
+}
 
 document.addEventListener('DOMContentLoaded', event=>{
   Sign.getAll()
@@ -29,7 +40,7 @@ homeDiv().addEventListener('click', event=>{
       alert('Are you a ghost, child?')
     } else {
       homeSection.classList.toggle('running');
-      htmlTag.style.backgroundImage = "url('https://files.slack.com/files-pri/T02MD9XTF-FHWM0P4Q5/otheroption.jpg')";
+      htmlTag.classList.add('new');
       let birthMonth = parseInt(dateBirth.split("-")[1]);
       let birthDay = parseInt(dateBirth.split("-")[2]);
 
@@ -61,6 +72,7 @@ homeDiv().addEventListener('click', event=>{
       resetBtn().addEventListener('click', event=>{
         location.reload()
       })
+      gameBtnClick()
     }
   }
 })
