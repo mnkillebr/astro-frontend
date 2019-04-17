@@ -58,6 +58,9 @@ homeDiv().addEventListener('click', event=>{
         enemiesList += `<li>${el.name}<img src="${el.image}" height="30" width="30"></li>`
       })
       htmlBody.innerHTML += createSignHTML(userSign, traitsList, matchesList, enemiesList)
+      resetBtn().addEventListener('click', event=>{
+        location.reload()
+      })
     }
   }
 })
@@ -98,5 +101,6 @@ const createSignHTML = (userSign, traitsList, matchesList, enemiesList) => {
 
 //page refresh
 resetBtn().addEventListener('click', event=>{
+  debugger
   location.reload()
 })
