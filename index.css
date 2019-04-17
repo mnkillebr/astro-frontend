@@ -17,8 +17,59 @@
   }
 }
 
+#welcome {
+  position: absolute;
+  top: 38px;
+  left: 25px;
+  height: 270px;
+  width: 350px;
+}
+
+#traits {
+  position: absolute;
+  bottom: 38px;
+  left: 25px;
+  height: 270px;
+  width: 350px;
+}
+
+#matches {
+  position: absolute;
+  top: 38px;
+  right: 25px;
+  height: 270px;
+  width: 350px;
+}
+
+#enemies {
+  position: absolute;
+  bottom: 38px;
+  right: 25px;
+  width: 350px;
+  height: 270px;
+}
+
+li:before {
+  content:"• ";
+}
+
+li{
+  font-size: 1.2em;
+  font-family: 'Josefin Sans', sans-serif;
+}
+#description {
+  font-size: 1.2em;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+}
+
 h1.title, h2.subtitle {
   color: white;
+  font-family: 'Righteous', cursive;
+}
+
+label {
+  font-family: 'Righteous', cursive;
 }
 
 button.button {
@@ -40,6 +91,6 @@ section.running {
 }
 
 html {
-  background: url(assets/sky.gif) no-repeat center center fixed;
+  background: url(assets/sky3.gif) no-repeat center center fixed;
   background-size: cover;
 }

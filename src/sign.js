@@ -8,10 +8,17 @@ class Sign {
     this.traits = traits
     Sign.all.push(this)
   }
+
+  static getAllMatchings() {
+    return fetch(`http://localhost:3000/matchings`)
+    .then(response => {return response.json()})
+  }
+
   static getAll() {
     return fetch('http://localhost:3000/signs')
     .then(response=>{return response.json()})
   }
+  
   static getSign(birthDay, birthMonth) {
     let userSign = ""
     if ((birthMonth == 1 && birthDay >= 20)||(birthMonth == 2 && birthDay <=18)) {
