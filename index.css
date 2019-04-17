@@ -76,6 +76,25 @@ button.button {
   color: #154796
 }
 
+canvas#background{
+  display: none;
+}
+
+button.play {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 3px;
+  background-image: url(assets/btn_bckgrnd.png);
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  height: 10%;
+  width: 10%
+}
+
 section.hero {
   animation-name: home-div;
   animation-duration: 2s;

@@ -76,27 +76,28 @@ const createSignHTML = (userSign, traitsList, matchesList, enemiesList) => {
                   <p id="description">${userSign.description}</p>
                 </div>
                 <div id="traits" class="tile is-child box">
-                <p class="title">${userSign.name} Traits</p>
-                <ul>
-                ${traitsList}
-                </ul>
+                  <p class="title">${userSign.name} Traits</p>
+                    <ul>
+                      ${traitsList}
+                    </ul>
                 </div>
               </div>
+              <button class="play">Play</button>
               <div class="tile is-4 is-vertical is-parent">
                 <div id="matches" class="tile is-child box">
-                <p class="title">Most compatible signs:</p>
-                <ul>
-                ${matchesList}
-                </ul>
+                  <p class="title">Most compatible signs:</p>
+                    <ul>
+                      ${matchesList}
+                    </ul>
                 </div>
                 <div id="enemies" class="tile is-child box">
-                <p class="title">Least compatible signs:</p>
-                <ul>
-                ${enemiesList}
-                </ul>
+                  <p class="title">Least compatible signs:</p>
+                    <ul>
+                      ${enemiesList}
+                    </ul>
                 </div>
-            </div>
-          </div>`
+              </div>
+            </div>`
 }
 
 //page refresh
