@@ -2,17 +2,14 @@ function homeDiv() {return document.querySelector('div.columns')}
 function resetBtn() {return document.querySelector('button.reset')}
 const homeSection = document.querySelector('section.hero')
 const htmlTag = document.querySelector('html')
-const pageTwoDiv = document.querySelector('div.page2')
+const htmlBody = document.querySelector('body')
 function gameDiv() {return document.querySelector('.tile.is-ancestor')}
 let matches = []
-// function playBtn() {return `<button class="play">Play</button>`}
 
 function gameBtnClick() {
   gameDiv().addEventListener('click', event=>{
     if (event.target.tagName === 'BUTTON') {
-      document.querySelector('canvas#background').id = 'background2'
-      document.querySelector('canvas#main').id = 'main2'
-      document.querySelector('canvas#ship').id = 'ship2'
+      document.querySelector('canvas#background').id = 'play'
       event.target.remove()
 
     }
@@ -43,7 +40,7 @@ homeDiv().addEventListener('click', event=>{
       alert('Are you a ghost, child?')
     } else {
       homeSection.classList.toggle('running');
-      htmlTag.classList.add('new');
+      document.location.href = 'page2.html';
       let birthMonth = parseInt(dateBirth.split("-")[1]);
       let birthDay = parseInt(dateBirth.split("-")[2]);
 
@@ -71,7 +68,7 @@ homeDiv().addEventListener('click', event=>{
       enemiesArr.forEach((el) => {
         enemiesList += `<li>${el.name}<img src="${el.image}" height="30" width="30"></li>`
       })
-      pageTwoDiv.innerHTML += createSignHTML(userSign, traitsList, matchesList, enemiesList)
+      htmlBody.innerHTML += createSignHTML(userSign, traitsList, matchesList, enemiesList)
       resetBtn().addEventListener('click', event=>{
         location.reload()
       })
@@ -117,5 +114,6 @@ const createSignHTML = (userSign, traitsList, matchesList, enemiesList) => {
 
 //page refresh
 resetBtn().addEventListener('click', event=>{
+  debugger
   location.reload()
 })
