@@ -76,16 +76,42 @@ button.button {
   color: #154796
 }
 
-canvas#play {
+canvas#background2 {
   margin: 0;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: -2;
 }
 
-canvas#background{
+canvas#main2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+canvas#ship2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+canvas#main {
+  display: none;
+}
+
+canvas#ship {
+  display: none;
+}
+
+canvas#background {
   display: none;
 }
 
