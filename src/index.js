@@ -5,15 +5,20 @@ const htmlTag = document.querySelector('html')
 const pageTwoDiv = document.querySelector('div.page2')
 function gameDiv() {return document.querySelector('.tile.is-ancestor')}
 let matches = []
+// function addJS() {
+//   return `<script src="src/space_shooter.js"></script>`
+// }
 // function playBtn() {return `<button class="play">Play</button>`}
 
 function gameBtnClick() {
   gameDiv().addEventListener('click', event=>{
     if (event.target.tagName === 'BUTTON') {
+      event.target.remove()
+      document.querySelector('script.game').src = "src/space_shooter.js"
       document.querySelector('canvas#background').id = 'background2'
       document.querySelector('canvas#main').id = 'main2'
       document.querySelector('canvas#ship').id = 'ship2'
-      event.target.remove()
+
 
     }
   })
