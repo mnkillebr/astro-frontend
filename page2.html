@@ -1,20 +1,82 @@
 <!DOCTYPE html>
-<html class="new" lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Zodiac Attack</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <script defer src="src/space_shooter.js"></script>
-    <script defer src="src/sign.js" type="text/javascript"></script>
-    <script defer src="src/space_shooter.js"></script>
-    <script defer src="src/page2.js" charset="utf-8"></script>
-  </head>
-  <body onload="init ()">
-    <canvas id="background" width="415" height="600"></canvas>
+<html>
+	<head>
+		<title>Zodiac Attack</title>
+    <link rel="stylesheet" type="text/css" href="page2.css">
+		<style>
+			canvas {
+        margin: 0;
+				position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+				background: transparent;
+			}
+			#background {
+				z-index: -2;
+			}
+			#main {
+				z-index: -1;
+			}
+			#ship {
+				z-index: 0;
+			}
+			.score {
+				position: absolute;
+        margin: 0;
+        top: 26%;
+        left: 67%;
+        transform: translate(-50%, -50%);
+				color: #FF7F00;
+				font-family: Helvetica, sans-serif;
+				cursor: default;
+			}
+			.game-over {
+				position: absolute;
+        margin: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+				color: #FF7F00;
+				font-family: Helvetica, sans-serif;
+				font-size: 30px;
+				cursor: default;
+				display: none;
+			}
+			.game-over span {
+				font-size: 20px;
+				cursor: pointer;
+				position: relative;
+				left: 50px;
+			}
+			.game-over span:hover {
+				color: #FFD700;
+			}
+			.loading {
+				position: absolute;
+        margin: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+				color: #FF7F00;
+				font-family: Helvetica, sans-serif;
+				font-size: 30px;
+				cursor: default;
+			}
+		</style>
+	</head>
+	<body>
     <button class="reset">Reset</button>
-  </body>
+		<canvas id="background" width="600" height="360">
+			Your browser does not support canvas. Please try again with a different browser.
+		</canvas>
+		<canvas id="main" width="600" height="360">
+		</canvas>
+		<canvas id="ship" width="600" height="360">
+		</canvas>
+		<div class="score">SCORE: <span id="score"></span></div>
+		<div class="game-over" id="game-over">GAME OVER<p><span onclick="game.restart()">Restart</span></p></div>
+		<div class="loading" id="loading">LOADING...<p>Please wait</p></div>
+		<script src="src/space_shooter_part_one.js"></script>
+	</body>
 </html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Zodiac Attack</title>
+    <!-- <link rel="stylesheet" type="text/css" href="./page2.css"> -->
+		<style>
+      html {
+        background: url(../assets/otheroption.jpg) no-repeat center center fixed;
+        background-size: cover;
+        z-index: -1;
+      }
+			canvas {
+        margin: 0;
+				position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+				background: transparent;
+			}
+			#background {
+				z-index: -2;
+			}
+			#main {
+				z-index: -1;
+			}
+			#ship {
+				z-index: 0;
+			}
+			.score {
+				position: absolute;
+        margin: 0;
+        top: 26%;
+        left: 67%;
+        transform: translate(-50%, -50%);
+				color: #FF7F00;
+				font-family: Helvetica, sans-serif;
+				cursor: default;
+			}
+			.game-over {
+				position: absolute;
+        margin: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+				color: #FF7F00;
+				font-family: Helvetica, sans-serif;
+				font-size: 30px;
+				cursor: default;
+				display: none;
+			}
+			.game-over span {
+				font-size: 20px;
+				cursor: pointer;
+				position: relative;
+				left: 50px;
+			}
+			.game-over span:hover {
+				color: #FFD700;
+			}
+			.loading {
+				position: absolute;
+        margin: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+				color: #FF7F00;
+				font-family: Helvetica, sans-serif;
+				font-size: 30px;
+				cursor: default;
+			}
+		</style>
+	</head>
+	<body>
+    <button class="reset">Reset</button>
+		<canvas id="background" width="600" height="360">
+			Your browser does not support canvas. Please try again with a different browser.
+		</canvas>
+		<canvas id="main" width="600" height="360">
+		</canvas>
+		<canvas id="ship" width="600" height="360">
+		</canvas>
+		<div class="score">SCORE: <span id="score"></span></div>
+		<div class="game-over" id="game-over">GAME OVER<p><span onclick="game.restart()">Restart</span></p></div>
+		<div class="loading" id="loading">LOADING...<p>Please wait</p></div>
+		<script src="../src/signScripts/gemini_shooter.js"></script>
+	</body>
+</html>
