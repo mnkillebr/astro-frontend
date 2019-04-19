@@ -13,6 +13,9 @@ let matches = []
 function gameBtnClick() {
   gameDiv().addEventListener('click', event=>{
     if (event.target.tagName === 'BUTTON') {
+      let location = document.querySelector('p.title').textContent.split(" ").pop()
+      // debugger
+      document.location.href = `signPages/${location}.html`
       event.target.remove()
       document.querySelector('script.game').src = "src/space_shooter.js"
       document.querySelector('canvas#background').id = 'background2'
@@ -76,7 +79,7 @@ homeDiv().addEventListener('click', event=>{
       enemiesArr.forEach((el) => {
         enemiesList += `<li>${el.name}<img src="${el.image}" height="30" width="30"></li>`
       })
-      pageTwoDiv.innerHTML += createSignHTML(userSign, traitsList, matchesList, enemiesList)
+      pageTwoDiv.innerHTML += createSignHTML(userName, userSign, traitsList, matchesList, enemiesList)
       resetBtn().addEventListener('click', event=>{
         location.reload()
       })
@@ -87,12 +90,12 @@ homeDiv().addEventListener('click', event=>{
 
 
 
-const createSignHTML = (userSign, traitsList, matchesList, enemiesList) => {
+const createSignHTML = (userName, userSign, traitsList, matchesList, enemiesList) => {
   return `
             <div class="tile is-ancestor">
               <div class="tile is-4 is-vertical is-parent">
                 <div id="welcome" class="tile is-child box">
-                  <p class="title">Hello, ${userSign.name}.</p>
+                  <p class="title">Hello ${userName}, your sun sign is: ${userSign.name}</p>
                   <p id="description">${userSign.description}</p>
                 </div>
                 <div id="traits" class="tile is-child box">
