@@ -1,6 +1,6 @@
 ## Zodiac Attack
 
-Zodiac Attack is 
+Zodiac Attack is an astrology app that identifies your zodiac sign and traits. Enter your name and DOB (don't worry, there is no database) and discover your compatible and incompatible signs. There's an added twist if you click 'Play'. Enjoy!
 
 This is the frontend for the project. Check out the backend [here](https://github.com/mnkillebr/astro-backend/ "Zodiac Attack Backend").
 
